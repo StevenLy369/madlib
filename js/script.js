@@ -1,29 +1,34 @@
 $(document).ready(function(){
-   var sentences=["one"];
    
 
 
     $("#formOne").submit(function (event){
         event.preventDefault();
-        sentences.forEach(function (sentence){
-           sentences.push(($("input#" + sentence).val()))
-       })
 
+        var sentences = $("input#sentence").val();
+
+        // console.log(sentences);
+
+        var newSentence = sentences.split(' ');
+        var newWords = [];
+        
+        newSentence.forEach(function (newSentence){
+            if (newSentence.length >= 3 ){
+                newWords.push(newSentence);
+            }
+        })
+
+        var newNewSentence=[];
+        var newNewSentence = newSentence.concat(newWords);
 
         
-        console.log(sentences);
+
+
+
+        console.log(newWords);
+        console.log(newNewSentence);
 
     })
-
-
-
-
-
-
-
-
-
-
 
 
 });
